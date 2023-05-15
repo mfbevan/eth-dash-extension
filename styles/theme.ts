@@ -1,4 +1,4 @@
-import { extendTheme } from "@chakra-ui/react";
+import { StyleFunctionProps, extendTheme } from "@chakra-ui/react";
 import { colors } from "./colors";
 
 export const config = {
@@ -9,4 +9,17 @@ export const config = {
 export const theme = extendTheme({
   config,
   colors,
+  components: {
+    Flex: {
+      variants: {
+        "app-container": {
+          width: "100%",
+          height: "100%",
+          flexDirection: "column",
+          bg: (props: StyleFunctionProps) =>
+            props.colorMode === "dark" ? "gray.900" : "gray.50",
+        },
+      },
+    },
+  },
 });

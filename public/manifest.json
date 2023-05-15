@@ -1,0 +1,9 @@
+{
+  "name": "Eth Dash",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "action": {
+    "default_title": "Eth Dash Extension",
+    "default_popup": "index.html"
+  }
+}

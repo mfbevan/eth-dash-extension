@@ -1,12 +1,12 @@
 {
-  "name": "eth-dash",
+  "name": "eth-dash-extension",
   "version": "0.1.0",
   "private": true,
   "author": "mfbevan",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export && mv ./out/_next ./out/next && cd ./out && grep -rli '_next' * | xargs -I@ sed -i '' 's|/_next|/next|g' @;",
     "start": "next start",
     "lint": "next lint"
   },
@@ -25,9 +25,12 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
-    "typescript": "4.8.4"
+    "typescript": "4.8.4",
+    "zustand": "^4.3.8"
   },
   "devDependencies": {
+    "@types/chrome": "^0.0.236",
+    "@types/firefox-webext-browser": "^111.0.1",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.1"
   }
