@@ -1,4 +1,10 @@
-import { useColorMode, Button, Box, chakra } from "@chakra-ui/react";
+import {
+  useColorMode,
+  Button,
+  Box,
+  chakra,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 export enum ColorMode {
@@ -9,22 +15,13 @@ export const DarkModeButton = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <StyledButton onClick={toggleColorMode}>
+    <Button
+      boxSize="50px"
+      boxShadow="base"
+      onClick={toggleColorMode}
+      bg={useColorModeValue("gray.50", "gray.700")}
+    >
       {colorMode === ColorMode.Light ? <MoonIcon /> : <SunIcon />}
-    </StyledButton>
+    </Button>
   );
 };
-
-const StyledButton = chakra(Button, {
-  baseStyle: {
-    boxSize: "50px",
-  },
-});
-
-export const AbsoluteButtonContainer = chakra(Box, {
-  baseStyle: {
-    position: "absolute",
-    right: { base: "10px", md: "40px" },
-    top: { base: "5px", md: "20px" },
-  },
-});

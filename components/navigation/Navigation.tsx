@@ -1,27 +1,39 @@
-import { Tabs, TabPanels, TabPanel } from "@chakra-ui/react";
-import { useNavigationStore } from "../stores";
+import {
+  Tabs,
+  TabPanels,
+  TabPanel,
+  Text,
+  Flex,
+  chakra,
+} from "@chakra-ui/react";
+import { navigationTabs, useNavigationStore } from "../stores";
 import { NavigationButtons } from "./NavigationButtons";
+import { TabContainer } from "./TabContainer";
 
 export const Navigation = () => {
   const { page, setPage } = useNavigationStore();
 
   return (
-    <Tabs index={page} onChange={setPage} flexDirection="row">
+    <Flex flexDirection="row" h="full">
       <NavigationButtons />
-      <TabPanels>
-        <TabPanel>
-          <p>Click the tabs or pull the slider around</p>
-        </TabPanel>
-        <TabPanel>
-          <p>Yeah yeah. up?</p>
-        </TabPanel>
-        <TabPanel>
-          <p>Oh, hello there.</p>
-        </TabPanel>
-        <TabPanel>
-          <p>Content</p>
-        </TabPanel>
-      </TabPanels>
-    </Tabs>
+      <Tabs
+        isLazy
+        index={page}
+        onChange={setPage}
+        display="flex"
+        flexDirection="row"
+        variant="unstyled"
+      >
+        <TabPanels>
+          {Object.entries(navigationTabs).map(([title, { Content }]) => {
+            return (
+              <TabContainer key={title} title={title}>
+                <Content />
+              </TabContainer>
+            );
+          })}
+        </TabPanels>
+      </Tabs>
+    </Flex>
   );
 };

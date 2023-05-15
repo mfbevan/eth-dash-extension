@@ -1,21 +1,37 @@
 import { create } from "zustand";
+import { DarkModeButton } from "../buttons";
 
-export const navigationTabs = {
+export interface INavigationTab {
+  index: number;
+  icon: string;
+  Content: () => JSX.Element;
+}
+
+export const navigationTabs: Record<string, INavigationTab> = {
   "Network Stats": {
     index: 0,
     icon: "💚",
+    Content: DarkModeButton,
   },
   Staking: {
     index: 1,
     icon: "🔥",
+    Content: DarkModeButton,
   },
   Dashboards: {
     index: 2,
     icon: "📗",
+    Content: DarkModeButton,
   },
-  Hardhat: {
+  "Developer Tools": {
     index: 3,
-    icon: "🛠️",
+    icon: "🚧",
+    Content: DarkModeButton,
+  },
+  Settings: {
+    index: 4,
+    icon: "⚙️",
+    Content: DarkModeButton,
   },
 };
 
