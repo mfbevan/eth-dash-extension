@@ -13,16 +13,36 @@ export const NetworkStaked = () => {
   const fetchedData = data?.data;
 
   return (
-    <Flex flexDirection="column">
+    <Flex flexDirection="column" gap="20px">
       <Flex gap="20px">
         <StatItem
-          label="Staked Ether"
-          value={fetchedData?.totalStaked}
+          label="Deposit Queue"
+          value={fetchedData?.queueEntering}
           isLoading={isLoading}
+          color="green.500"
+        />
+        <StatItem
+          label="Exit Queue"
+          value={fetchedData?.queueExiting}
+          isLoading={isLoading}
+          color="red.500"
         />
         <StatItem
           label="Total Validators"
           value={fetchedData?.validators}
+          isLoading={isLoading}
+        />
+      </Flex>
+
+      <Flex gap="20px">
+        <StatItem
+          label="Epoch"
+          value={fetchedData?.epoch}
+          isLoading={isLoading}
+        />
+        <StatItem
+          label="Staked Ether"
+          value={fetchedData?.totalStaked}
           isLoading={isLoading}
         />
       </Flex>

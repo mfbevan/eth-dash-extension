@@ -11,7 +11,7 @@ import {
 
 interface IStatItemProps {
   label: string;
-  value?: string;
+  value?: string | number;
   helperText?: string;
   unit?: string;
   color?: string;

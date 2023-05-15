@@ -1,6 +1,5 @@
 import { apiHandler } from "../../../api";
 import { NextApiRequest, NextApiResponse } from "next/types";
-import { NextHandler } from "next-connect";
 import { cache } from "../../../api/middleware/cache";
 import { EtherscanService } from "../../../services";
 
@@ -17,8 +16,7 @@ export interface NetworkStatsResponse {
 }
 
 export default apiHandler()
-  // TODO enable cache
-  // .use(cache())
+  .use(cache())
   .get(
     async (req: NextApiRequest, res: NextApiResponse<NetworkStatsResponse>) => {
       const { totalSupply, totalSupplyWei } =
