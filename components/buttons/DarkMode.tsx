@@ -17,9 +17,10 @@ export const DarkModeButton = () => {
   return (
     <Button
       boxSize="50px"
-      boxShadow="base"
       onClick={toggleColorMode}
-      bg={useColorModeValue("gray.50", "gray.700")}
+      // boxShadow="base"
+      // bg={useColorModeValue("gray.50", "gray.700")}
+      bg="none"
     >
       {colorMode === ColorMode.Light ? <MoonIcon /> : <SunIcon />}
     </Button>

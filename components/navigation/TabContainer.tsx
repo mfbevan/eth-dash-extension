@@ -1,4 +1,4 @@
-import { TabPanel, Text } from "@chakra-ui/react";
+import { Flex, TabPanel, Text, useColorModeValue } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
 export const TabContainer = ({
@@ -7,10 +7,18 @@ export const TabContainer = ({
 }: {
   title: string;
   children: ReactNode;
-}) => {
-  return (
-    <TabPanel display="flex" flexDirection="column" flex={1}>
-      <Text variant="tab-title">{title}</Text>
-    </TabPanel>
-  );
-};
+}) => (
+  <TabPanel
+    as={Flex}
+    display="flex"
+    flexDirection="column"
+    flex={1}
+    boxShadow="inner"
+    rounded="xl"
+    m="20px"
+    bg={useColorModeValue("gray.100", "gray.700")}
+  >
+    <Text variant="tab-title">{title}</Text>
+    {children}
+  </TabPanel>
+);

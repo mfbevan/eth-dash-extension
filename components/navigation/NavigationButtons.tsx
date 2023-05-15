@@ -1,33 +1,49 @@
-import { useColorModeValue, Button, Flex, Spacer } from "@chakra-ui/react";
+import {
+  useColorModeValue,
+  Button,
+  Flex,
+  Spacer,
+  Tooltip,
+} from "@chakra-ui/react";
 import { navigationTabs, useNavigationStore } from "../stores";
 import { DarkModeButton } from "../buttons";
 
 export const NavigationButtons = () => {
   const { page, setPage } = useNavigationStore();
 
-  const selectedBg = useColorModeValue("gray.50", "gray.700");
+  const selectedBorder = useColorModeValue(
+    "var(--chakra-colors-gray-200)",
+    "var(--chakra-colors-gray-600)"
+  );
 
   return (
-    <Flex flexDirection="column" w="50px" gap="10px">
+    <Flex
+      flexDirection="column"
+      w="50px"
+      boxShadow="base"
+      bg={useColorModeValue("gray.50", "gray.700")}
+    >
       {Object.entries(navigationTabs).map(([title, { icon, index }]) => {
         const selected = page === index;
         return (
-          <Button
-            onClick={() => {
-              setPage(index);
-            }}
-            key={title}
-            rounded="lg"
-            boxSize="50px"
-            _hover={{
-              boxShadow: "base",
-            }}
-            {...(selected
-              ? { bg: selectedBg, boxShadow: "base" }
-              : { bg: "transparent" })}
-          >
-            {icon}
-          </Button>
+          <Tooltip key={title} label={title}>
+            <Button
+              onClick={() => {
+                setPage(index);
+              }}
+              rounded="lg"
+              boxSize="50px"
+              _hover={{
+                boxShadow: "base",
+              }}
+              bg="none"
+              borderRight={selected ? `4px solid ${selectedBorder}` : ""}
+              transition="all 0.1s ease"
+              boxShadow={selected ? "base" : "none"}
+            >
+              {icon}
+            </Button>
+          </Tooltip>
         );
       })}
       <Spacer />

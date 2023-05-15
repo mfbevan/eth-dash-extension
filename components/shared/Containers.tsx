@@ -13,7 +13,6 @@ export const AppContainer = (props: FlexProps) => {
       bg={bg}
       flex={1}
       {...props}
-      p="10px"
     />
   );
 };

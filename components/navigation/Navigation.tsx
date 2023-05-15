@@ -14,9 +14,10 @@ export const Navigation = () => {
   const { page, setPage } = useNavigationStore();
 
   return (
-    <Flex flexDirection="row" h="full">
+    <Flex flexDirection="row" h="full" w="full">
       <NavigationButtons />
       <Tabs
+        w="full"
         isLazy
         index={page}
         onChange={setPage}
