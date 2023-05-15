@@ -1,4 +1,10 @@
-import { Flex, TabPanel, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+  Divider,
+  Flex,
+  TabPanel,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { ReactNode } from "react";
 
 export const TabContainer = ({
@@ -19,6 +25,7 @@ export const TabContainer = ({
     bg={useColorModeValue("gray.100", "gray.700")}
   >
     <Text variant="tab-title">{title}</Text>
+    <Divider />
     {children}
   </TabPanel>
 );

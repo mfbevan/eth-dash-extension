@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "prepare-build": "next build && next export && mv ./out/_next ./out/next && cd ./out && grep -rli '_next' * | xargs -I@ sed -i '' 's|/_next|/next|g' @;",
+    "build:extension": "next build && next export && mv ./out/_next ./out/next && cd ./out && grep -rli '_next' * | xargs -I@ sed -i '' 's|/_next|/next|g' @;",
     "start": "next start",
     "lint": "next lint"
   },
@@ -39,5 +39,6 @@
     "@types/http-errors": "^2.0.1",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.1"
-  }
+  },
+  "proxy": "https://api.ethdash.xyz"
 }

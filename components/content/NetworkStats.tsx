@@ -1,10 +1,11 @@
 import { Text } from "@chakra-ui/react";
-import axios from "axios";
 import { useQuery } from "react-query";
+import { apiInstance } from "../../api";
+import axios from "axios";
 
 export const NetworkStats = () => {
   const { data } = useQuery({
-    queryFn: () => axios.get("/api/health"),
+    queryFn: () => apiInstance.get("health"),
   });
 
   return <Text>{data?.data}</Text>;
