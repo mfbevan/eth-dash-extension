@@ -12,7 +12,7 @@ import {
 
 interface IStatItemProps {
   label: string;
-  value: string;
+  value?: string;
   helperText?: string;
   color?: string;
   isLoading?: boolean;

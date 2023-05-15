@@ -10,13 +10,19 @@ export const NetworkStats = () => {
     return <ErrorState />;
   }
 
+  const fetchedData = data?.data;
+
   return (
     <Flex flexDirection="column" gap="20px">
       <Flex gap="20px">
-        <StatItem label="Ether Price" value="$1200.00" isLoading={isFetching} />
+        <StatItem
+          label="Ether Price"
+          value={fetchedData?.etherPrice}
+          isLoading={isFetching}
+        />
         <StatItem
           label="Total Supply"
-          value="100000000"
+          value={fetchedData?.totalSupply}
           isLoading={isFetching}
         />
       </Flex>
@@ -24,19 +30,19 @@ export const NetworkStats = () => {
       <Flex gap="20px">
         <StatItem
           label="Gas Low"
-          value="50 gwei"
+          value={fetchedData?.gas?.low}
           color="green.500"
           isLoading={isFetching}
         />
         <StatItem
           label="Gas Average"
-          value="100 gwei"
+          value={fetchedData?.gas?.average}
           color="blue.500"
           isLoading={isFetching}
         />
         <StatItem
           label="Gas High"
-          value="200 gwei"
+          value={fetchedData?.gas?.high}
           color="red.500"
           isLoading={isFetching}
         />
