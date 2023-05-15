@@ -25,7 +25,7 @@ export const TabContainer = ({
     bg={useColorModeValue("gray.100", "gray.700")}
   >
     <Text variant="tab-title">{title}</Text>
-    <Divider />
+    <Divider mt="5px" mb="10px" />
     {children}
   </TabPanel>
 );

@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { DarkModeButton } from "../buttons";
-import { NetworkStats } from "../content/NetworkStats";
+import { NetworkStats, NetworkStaked } from "../content";
 
 export interface INavigationTab {
   index: number;
@@ -17,23 +17,28 @@ export const navigationTabs: Record<string, INavigationTab> = {
   Staking: {
     index: 1,
     icon: "🔥",
-    Content: DarkModeButton,
+    Content: NetworkStaked,
   },
-  Dashboards: {
-    index: 2,
-    icon: "📗",
-    Content: DarkModeButton,
-  },
-  "Developer Tools": {
-    index: 3,
-    icon: "🚧",
-    Content: DarkModeButton,
-  },
-  Settings: {
-    index: 4,
-    icon: "⚙️",
-    Content: DarkModeButton,
-  },
+  // Dashboards: {
+  //   index: 2,
+  //   icon: "📗",
+  //   Content: DarkModeButton,
+  // },
+  // "Developer Tools": {
+  //   index: 3,
+  //   icon: "🚧",
+  //   Content: DarkModeButton,
+  // },
+  // Favorites: {
+  //   index: 4,
+  //   icon: "🌟",
+  //   Content: DarkModeButton,
+  // },
+  // Settings: {
+  //   index: 5,
+  //   icon: "⚙️",
+  //   Content: DarkModeButton,
+  // },
 };
 
 export interface INavigationStore {
