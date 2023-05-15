@@ -4,9 +4,9 @@ import { useGetNetworkStaked } from "../../query";
 import { ErrorState } from "../error";
 
 export const NetworkStaked = () => {
-  const { data, isFetching } = useGetNetworkStaked();
+  const { data, isLoading } = useGetNetworkStaked();
 
-  if (!isFetching && !data) {
+  if (!isLoading && !data) {
     return <ErrorState />;
   }
 
@@ -15,8 +15,16 @@ export const NetworkStaked = () => {
   return (
     <Flex flexDirection="column">
       <Flex gap="20px">
-        <StatItem label="Staked Ether" value={fetchedData?.totalStaked} />
-        <StatItem label="Total Validators" value={fetchedData?.validators} />
+        <StatItem
+          label="Staked Ether"
+          value={fetchedData?.totalStaked}
+          isLoading={isLoading}
+        />
+        <StatItem
+          label="Total Validators"
+          value={fetchedData?.validators}
+          isLoading={isLoading}
+        />
       </Flex>
     </Flex>
   );

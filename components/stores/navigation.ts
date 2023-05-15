@@ -15,10 +15,11 @@ export const navigationTabs: Record<string, INavigationTab> = {
     Content: NetworkStats,
     description: "Powered by Etherscan",
   },
-  Staking: {
+  "Staking & Withdrawals": {
     index: 1,
     icon: "🔥",
     Content: NetworkStaked,
+    description: "Powered by Beaconcha.in",
   },
   // Dashboards: {
   //   index: 2,

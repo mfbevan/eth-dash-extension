@@ -6,14 +6,14 @@ import {
   useColorModeValue,
   Skeleton,
   SkeletonText,
-  Box,
-  Flex,
+  Text,
 } from "@chakra-ui/react";
 
 interface IStatItemProps {
   label: string;
   value?: string;
   helperText?: string;
+  unit?: string;
   color?: string;
   isLoading?: boolean;
 }
@@ -22,6 +22,7 @@ export const StatItem = ({
   label,
   value,
   helperText,
+  unit,
   color,
   isLoading,
 }: IStatItemProps) => {
@@ -29,7 +30,7 @@ export const StatItem = ({
 
   if (isLoading) {
     return (
-      <Skeleton h="85px" bg="gray.50" rounded="lg" p="10px" flex={1}>
+      <Skeleton h="77px" bg="gray.50" rounded="lg" p="10px" flex={1}>
         <SkeletonText
           startColor="pink.500"
           endColor="orange.500"
@@ -41,8 +42,12 @@ export const StatItem = ({
   return (
     <Stat bg={bg} rounded="lg" p="10px" color={color}>
       <StatLabel>{label}</StatLabel>
-      <StatNumber>{value}</StatNumber>
-      <StatHelpText>{helperText}</StatHelpText>
+      <StatNumber>
+        {value}
+        <Text as="span" fontSize="xs" pl="5px">
+          {unit}
+        </Text>
+      </StatNumber>
     </Stat>
   );
 };

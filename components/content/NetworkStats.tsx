@@ -4,9 +4,9 @@ import { useGetNetworkStats } from "../../query";
 import { ErrorState } from "../error";
 
 export const NetworkStats = () => {
-  const { data, isFetching } = useGetNetworkStats();
+  const { data, isLoading } = useGetNetworkStats();
 
-  if (!isFetching && !data) {
+  if (!isLoading && !data) {
     return <ErrorState />;
   }
 
@@ -18,12 +18,27 @@ export const NetworkStats = () => {
         <StatItem
           label="Ether Price"
           value={fetchedData?.etherPrice}
-          isLoading={isFetching}
+          unit="USD"
+          isLoading={isLoading}
         />
+        <StatItem
+          label="Ether/BTC Ratio"
+          value={fetchedData?.etherBTC}
+          isLoading={isLoading}
+        />
+      </Flex>
+
+      <Flex gap="20px">
         <StatItem
           label="Total Supply"
           value={fetchedData?.totalSupply}
-          isLoading={isFetching}
+          isLoading={isLoading}
+        />
+        <StatItem
+          label="Market Capitalization"
+          value={fetchedData?.marketCap}
+          unit="USD"
+          isLoading={isLoading}
         />
       </Flex>
 
@@ -31,20 +46,23 @@ export const NetworkStats = () => {
         <StatItem
           label="Gas Low"
           value={fetchedData?.gas?.low}
+          unit="gwei"
           color="green.500"
-          isLoading={isFetching}
+          isLoading={isLoading}
         />
         <StatItem
           label="Gas Average"
           value={fetchedData?.gas?.average}
+          unit="gwei"
           color="blue.500"
-          isLoading={isFetching}
+          isLoading={isLoading}
         />
         <StatItem
           label="Gas High"
           value={fetchedData?.gas?.high}
+          unit="gwei"
           color="red.500"
-          isLoading={isFetching}
+          isLoading={isLoading}
         />
       </Flex>
     </Flex>
