@@ -2,10 +2,11 @@ import { Flex } from "@chakra-ui/react";
 import { useQuery } from "react-query";
 import { apiInstance } from "../../api";
 import { StatItem } from "../stats";
+import axios from "axios";
 
 export const NetworkStats = () => {
   const { data } = useQuery({
-    queryFn: () => apiInstance.get("health"),
+    queryFn: () => axios.get("https://api.ethdash.xyz/api/health"),
   });
 
   return (
