@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { DarkModeButton } from "../buttons";
+import { NetworkStats } from "../content/NetworkStats";
 
 export interface INavigationTab {
   index: number;
@@ -11,7 +12,7 @@ export const navigationTabs: Record<string, INavigationTab> = {
   "Network Stats": {
     index: 0,
     icon: "💚",
-    Content: DarkModeButton,
+    Content: NetworkStats,
   },
   Staking: {
     index: 1,
