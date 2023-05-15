@@ -9,9 +9,11 @@ import { ReactNode } from "react";
 
 export const TabContainer = ({
   title,
+  description,
   children,
 }: {
   title: string;
+  description?: string;
   children: ReactNode;
 }) => (
   <TabPanel
@@ -25,6 +27,7 @@ export const TabContainer = ({
     bg={useColorModeValue("gray.100", "gray.700")}
   >
     <Text variant="tab-title">{title}</Text>
+    <Text variant="tab-description">{description}</Text>
     <Divider mt="5px" mb="10px" />
     {children}
   </TabPanel>

@@ -5,5 +5,10 @@
   "action": {
     "default_title": "Eth Dash Extension",
     "default_popup": "index.html"
+  },
+  "icons": {
+    "16": "./favicon.ico",
+    "48": "./favicon.ico",
+    "128": "./favicon.ico"
   }
 }

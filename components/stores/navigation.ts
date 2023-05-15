@@ -1,11 +1,11 @@
 import { create } from "zustand";
-import { DarkModeButton } from "../buttons";
 import { NetworkStats, NetworkStaked } from "../content";
 
 export interface INavigationTab {
   index: number;
   icon: string;
   Content: () => JSX.Element;
+  description?: string;
 }
 
 export const navigationTabs: Record<string, INavigationTab> = {
@@ -13,6 +13,7 @@ export const navigationTabs: Record<string, INavigationTab> = {
     index: 0,
     icon: "💚",
     Content: NetworkStats,
+    description: "Powered by Etherscan",
   },
   Staking: {
     index: 1,

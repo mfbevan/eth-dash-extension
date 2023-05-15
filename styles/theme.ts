@@ -18,6 +18,10 @@ export const theme = extendTheme({
           fontSize: "xl",
           fontWeight: "bold",
         },
+        "tab-description": {
+          fontSize: "xs",
+          opacity: "0.5",
+        },
       },
     },
   },

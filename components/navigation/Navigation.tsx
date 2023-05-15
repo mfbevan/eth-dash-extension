@@ -26,13 +26,19 @@ export const Navigation = () => {
         variant="unstyled"
       >
         <TabPanels>
-          {Object.entries(navigationTabs).map(([title, { Content }]) => {
-            return (
-              <TabContainer key={title} title={title}>
-                <Content />
-              </TabContainer>
-            );
-          })}
+          {Object.entries(navigationTabs).map(
+            ([title, { Content, description }]) => {
+              return (
+                <TabContainer
+                  key={title}
+                  title={title}
+                  description={description}
+                >
+                  <Content />
+                </TabContainer>
+              );
+            }
+          )}
         </TabPanels>
       </Tabs>
     </Flex>
