@@ -2,9 +2,10 @@ import { Flex } from "@chakra-ui/react";
 import { StatItem } from "../stats";
 import { useGetNetworkStaked } from "../../query";
 import { ErrorState } from "../error";
+import { FixedLoading } from "../loading";
 
 export const NetworkStaked = () => {
-  const { data, isLoading } = useGetNetworkStaked();
+  const { data, isLoading, isFetching } = useGetNetworkStaked();
 
   if (!isLoading && !data) {
     return <ErrorState />;
@@ -14,6 +15,7 @@ export const NetworkStaked = () => {
 
   return (
     <Flex flexDirection="column" gap="20px">
+      <FixedLoading isLoading={isFetching} />
       <Flex gap="20px">
         <StatItem
           label="Deposit Queue"

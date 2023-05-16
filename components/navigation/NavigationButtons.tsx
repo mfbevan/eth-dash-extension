@@ -5,8 +5,8 @@ import {
   Spacer,
   Tooltip,
 } from "@chakra-ui/react";
-import { navigationTabs, useNavigationStore } from "../stores";
 import { DarkModeButton } from "../buttons";
+import { navigationTabs, useNavigationStore } from "../../stores";
 
 export const NavigationButtons = () => {
   const { page, setPage } = useNavigationStore();

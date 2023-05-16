@@ -246,6 +246,14 @@ export const dashboards: IDashboard[] = [
     tags: [IDashboardTag.DeFi],
   },
   {
+    name: "MEV Watch",
+    description:
+      "Some MEV-Boost relays are regulated under OFAC and will censor certain transactions. Use this tool to observe the effect it's having on Ethereum blocks.",
+    url: "https://mevwatch.info",
+    image: "mev-watch.jpg",
+    tags: [IDashboardTag.MEV],
+  },
+  {
     name: "Flashbots",
     description:
       "The Flashbots MEV-Boost transparency dashboard is a public dashboard of metrics related to the Flashbots MEV-Boost relay and builder.",
@@ -264,17 +272,9 @@ export const dashboards: IDashboard[] = [
   {
     name: "MEV Boost.pics",
     description:
-      "MEV-Boost Dashboard. All charts have an interactive component: you can filter by a certain time frame or hide and show specific relays and builders.",
+      "MEV-Boost Dashboard. You can filter by a certain time frame or hide and show specific relays and builders.",
     url: "https://mevboost.pics",
     image: "mev-boost-pics.jpg",
-    tags: [IDashboardTag.MEV],
-  },
-  {
-    name: "MEV Watch",
-    description:
-      "Some MEV-Boost relays are regulated under OFAC and will censor certain transactions. Use this tool to observe the effect it's having on Ethereum blocks.",
-    url: "https://mevwatch.info",
-    image: "mev-watch.jpg",
     tags: [IDashboardTag.MEV],
   },
   {

@@ -1,11 +1,12 @@
 import { create } from "zustand";
-import { NetworkStats, NetworkStaked } from "../content";
+import { NetworkStats, NetworkStaked, Bookmarks } from "../components/content";
 
 export interface INavigationTab {
   index: number;
   icon: string;
   Content: () => JSX.Element;
   description?: string;
+  link?: string;
 }
 
 export const navigationTabs: Record<string, INavigationTab> = {
@@ -14,18 +15,22 @@ export const navigationTabs: Record<string, INavigationTab> = {
     icon: "💚",
     Content: NetworkStats,
     description: "Powered by Etherscan",
+    link: "https://etherscan.io/",
   },
   "Staking & Withdrawals": {
     index: 1,
     icon: "🔥",
     Content: NetworkStaked,
     description: "Powered by Beaconcha.in",
+    link: "https://beaconcha.in/",
   },
-  // Dashboards: {
-  //   index: 2,
-  //   icon: "📗",
-  //   Content: DarkModeButton,
-  // },
+  "Ethereum Dashboards": {
+    index: 2,
+    icon: "📚",
+    Content: Bookmarks,
+    description: "Powered by ethdash.xyz",
+    link: "https://ethdash.xyz/",
+  },
   // "Developer Tools": {
   //   index: 3,
   //   icon: "🚧",
@@ -34,7 +39,7 @@ export const navigationTabs: Record<string, INavigationTab> = {
   // Favorites: {
   //   index: 4,
   //   icon: "🌟",
-  //   Content: DarkModeButton,
+  //   Content: Favourites,
   // },
   // Settings: {
   //   index: 5,

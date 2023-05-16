@@ -1,10 +1,9 @@
 import { Flex } from "@chakra-ui/react";
-import { StatItem } from "../stats";
 import { useGetNetworkStats } from "../../query";
-import { ErrorState } from "../error";
+import { ErrorState, FixedLoading, StatItem } from "..";
 
 export const NetworkStats = () => {
-  const { data, isLoading } = useGetNetworkStats();
+  const { data, isLoading, isFetching } = useGetNetworkStats();
 
   if (!isLoading && !data) {
     return <ErrorState />;
@@ -14,6 +13,7 @@ export const NetworkStats = () => {
 
   return (
     <Flex flexDirection="column" gap="20px">
+      <FixedLoading isLoading={isFetching} />
       <Flex gap="20px">
         <StatItem
           label="Ether Price"
