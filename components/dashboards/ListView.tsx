@@ -15,7 +15,7 @@ import { FiExternalLink } from "react-icons/fi";
 export const DashboardListItem = ({ name, url, tags }: IDashboard) => (
   <Link href={url} target="_blank">
     <DashboardItemContainer
-      bg={useColorModeValue("white", "gray.700")}
+      bg={useColorModeValue("white", "gray.800")}
       borderColor={useColorModeValue("gray.200", "gray.900")}
     >
       <Flex p="10px" w="full" gap="5px">

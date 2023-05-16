@@ -7,7 +7,7 @@ export const DashboardCard = ({ name, image, url, tags }: IDashboard) => (
   <Link href={url} target="_blank">
     <CardContainer
       bg={useColorModeValue("white", "gray.800")}
-      borderColor={useColorModeValue("gray.100", "gray.800")}
+      borderColor={useColorModeValue("gray.100", "gray.900")}
     >
       <DashboardImage src={`dashboard-images/${image}`} alt={image} />
       <Flex>
@@ -44,7 +44,6 @@ const CardContainer = chakra(Flex, {
     justify: "center",
     alignItems: "center",
     gap: "10px",
-    m: "10px",
     pb: "5px",
   },
 });

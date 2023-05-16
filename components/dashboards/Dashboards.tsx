@@ -36,13 +36,17 @@ export const Dashboards = () => {
         selectedSize={selectedSize}
         setSelectedSize={setSelectedSize}
       />
-      <Flex gap="10px">
+      <Wrap
+        spacing={selectedSize === IDashboardSize.List ? "3px" : "20px"}
+        justify="center"
+        pb="10px"
+      >
         {filteredDashboards.map((_dash) => {
           const SelectedComponent = () =>
             DashboardComponent(_dash)[selectedSize];
           return <SelectedComponent key={_dash.name} {..._dash} />;
         })}
-      </Flex>
+      </Wrap>
     </Flex>
   );
 };

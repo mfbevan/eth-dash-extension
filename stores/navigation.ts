@@ -1,5 +1,10 @@
 import { create } from "zustand";
-import { NetworkStats, NetworkStaked, Bookmarks } from "../components/content";
+import {
+  NetworkStats,
+  NetworkStaked,
+  Bookmarks,
+  Information,
+} from "../components/content";
 
 export interface INavigationTab {
   index: number;
@@ -30,6 +35,13 @@ export const navigationTabs: Record<string, INavigationTab> = {
     Content: Bookmarks,
     description: "Powered by ethdash.xyz",
     link: "https://ethdash.xyz/",
+  },
+  Information: {
+    index: 3,
+    icon: "❔",
+    Content: Information,
+    description: "Made by mfbevan.eth",
+    link: "https://twitter.com/mfbevan",
   },
   // "Developer Tools": {
   //   index: 3,

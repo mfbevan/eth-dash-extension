@@ -5,3 +5,4 @@ export * from "./loading";
 export * from "./content";
 export * from "./error";
 export * from "./stats";
+export * from "./socials";

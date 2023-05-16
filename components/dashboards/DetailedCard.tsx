@@ -1,17 +1,5 @@
-import {
-  Wrap,
-  Text,
-  chakra,
-  useColorModeValue,
-  Center,
-  Image,
-  VStack,
-  Box,
-  HStack,
-  Flex,
-} from "@chakra-ui/react";
+import { Text, chakra, useColorModeValue, Image, Flex } from "@chakra-ui/react";
 import { IDashboard } from "../../constants";
-import { DashboardTag } from "./Tag";
 import Link from "next/link";
 import { FiExternalLink } from "react-icons/fi";
 
@@ -24,8 +12,8 @@ export const DashboardCardDetailed = ({
 }: IDashboard) => (
   <Link href={url} target="_blank">
     <Card
-      bg={useColorModeValue("white", "gray.700")}
-      borderColor={useColorModeValue("gray.100", "gray.700")}
+      bg={useColorModeValue("white", "gray.800")}
+      borderColor={useColorModeValue("gray.100", "gray.900")}
     >
       <Flex>
         <DashboardImage src={`dashboard-images/${image}`} alt={image} />
@@ -71,6 +59,5 @@ const Card = chakra(Flex, {
     borderWidth: "1px",
     rounded: "lg",
     shadow: "lg",
-    m: "10px",
   },
 });
