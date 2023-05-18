@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import {
+  FcAddressBook,
   FcBinoculars,
   FcBookmark,
   FcComboChart,
@@ -12,8 +13,8 @@ import {
   NetworkStaked,
   Bookmarks,
   Information,
-  Favourites,
   Settings,
+  AddressBook,
 } from "../components/content";
 
 export interface INavigationTab {
@@ -46,11 +47,11 @@ export const navigationTabs: Record<string, INavigationTab> = {
     description: "Powered by ethdash.xyz",
     link: "https://ethdash.xyz/",
   },
-  "Wallet Tracker": {
+  "Address Book": {
     index: 3,
-    icon: <FcBinoculars />,
-    Content: Favourites,
-    description: "Track your favourite Ethereum wallets",
+    icon: <FcAddressBook />,
+    Content: AddressBook,
+    description: "Track your favourite Ethereum wallets and contracts",
   },
   Information: {
     index: 4,

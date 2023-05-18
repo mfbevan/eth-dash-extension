@@ -8,7 +8,6 @@ import {
   Tooltip,
   chakra,
   useBoolean,
-  useClipboard,
   useColorModeValue,
   useToast,
 } from "@chakra-ui/react";
@@ -24,7 +23,7 @@ import { AddIcon, CopyIcon, EditIcon, MinusIcon } from "@chakra-ui/icons";
 import { shortenAddress } from "../../utils/shorten-address";
 import { OpenWalletButton } from "../buttons";
 
-export const Favourites = () => {
+export const AddressBook = () => {
   const client = useQueryClient();
   const toast = useToast();
 
