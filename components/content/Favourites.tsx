@@ -88,7 +88,7 @@ export const Favourites = () => {
         onClick={setEditMode.toggle}
         icon={<EditIcon />}
       />
-      <Flex gap="10px" display={editMode ? "flex" : "none"}>
+      <Flex p="10px" gap="10px" display={editMode ? "flex" : "none"}>
         <Input
           size="sm"
           rounded="lg"
@@ -117,7 +117,7 @@ export const Favourites = () => {
 
       <Flex flexDirection="column" gap="10px" fontSize="0.8rem">
         {favouriteWallets && favouriteWallets.length > 0 ? (
-          favouriteWallets?.map((wallet, index) => {
+          favouriteWallets?.map((wallet) => {
             return (
               <WalletContainer key={wallet.address} bg={walletBgColor}>
                 <Text w="120px">{wallet.name}</Text>

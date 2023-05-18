@@ -5,6 +5,7 @@ import {
   FcComboChart,
   FcLock,
   FcQuestions,
+  FcSettings,
 } from "react-icons/fc";
 import {
   NetworkStats,
@@ -12,6 +13,7 @@ import {
   Bookmarks,
   Information,
   Favourites,
+  Settings,
 } from "../components/content";
 
 export interface INavigationTab {
@@ -44,7 +46,7 @@ export const navigationTabs: Record<string, INavigationTab> = {
     description: "Powered by ethdash.xyz",
     link: "https://ethdash.xyz/",
   },
-  Favourites: {
+  "Wallet Tracker": {
     index: 3,
     icon: <FcBinoculars />,
     Content: Favourites,
@@ -56,5 +58,11 @@ export const navigationTabs: Record<string, INavigationTab> = {
     Content: Information,
     description: "Made by mfbevan.eth",
     link: "https://twitter.com/mfbevan",
+  },
+  Settings: {
+    index: 5,
+    icon: <FcSettings />,
+    Content: Settings,
+    description: "Personalise your experience",
   },
 };

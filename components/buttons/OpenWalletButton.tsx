@@ -12,7 +12,6 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { FavouriteWallet } from "../../query";
-import { BsArrowRight } from "react-icons/bs";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
 const openWalletOptions: {
@@ -28,15 +27,15 @@ const openWalletOptions: {
     baseUrl: "https://opensea.io/",
   },
   {
-    title: "Polygon Explorer",
+    title: "Polygonscan",
     baseUrl: "https://polygonscan.com/address/",
   },
   {
-    title: "Optimism Explorer",
+    title: "Optimism",
     baseUrl: "https://optimistic.etherscan.io/address/",
   },
   {
-    title: "Arbitrum Explorer",
+    title: "Arbiscan",
     baseUrl: "https://arbiscan.io/address/",
   },
 ];
@@ -53,11 +52,11 @@ export const OpenWalletButton = ({
     <PopoverTrigger>
       <Button size="xs">Open</Button>
     </PopoverTrigger>
-    <PopoverContent w="175px">
+    <PopoverContent w="130px">
       <PopoverArrow />
-      <PopoverBody>
+      <PopoverBody p="5px">
         {openWalletOptions.map(({ title, baseUrl }) => (
-          <Link href={`${baseUrl}${address}`} key={title}>
+          <Link href={`${baseUrl}${address}`} target="_blank" key={title}>
             <Box
               role="group"
               display="block"
@@ -65,7 +64,7 @@ export const OpenWalletButton = ({
               pl="5px"
               rounded="md"
               _hover={{ bg: "blue.50" }}
-              w="150px"
+              w="120px"
             >
               <Flex direction="row" align="center">
                 <Box>
