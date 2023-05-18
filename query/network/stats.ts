@@ -13,5 +13,6 @@ export const useGetNetworkStats = () => {
   return useQuery({
     queryKey: [GetNetworkStatsQueryKey],
     queryFn: getNetworkStats,
+    refetchInterval: 10000,
   });
 };

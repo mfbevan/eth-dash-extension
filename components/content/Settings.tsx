@@ -17,7 +17,7 @@ export const Settings = () => {
 
   return (
     <Flex flexDirection="column">
-      <Flex gap="10px">
+      <Flex gap="10px" p="2px">
         <Checkbox
           isChecked={currentSettings["show-testnet-explorers" as SettingsKey]}
           checked={currentSettings["show-testnet-explorers" as SettingsKey]}
