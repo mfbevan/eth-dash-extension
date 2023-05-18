@@ -5,10 +5,10 @@ import { Socials } from "../socials";
 export const Information = () => (
   <Flex flexDirection="column" gap="20px" pb="30px">
     <StyledText>
-      Seamlessly access all your favorite Ethereum dashboards in one convenient
+      Seamlessly access all your favourite Ethereum dashboards in one convenient
       location. Monitor the latest network stats, keep an eye on Ethereum
-      staking, and even monitor your favorite wallets (all to come in future
-      updates).
+      staking, and even monitor your favourite wallets, with plenty more
+      features coming soon!
     </StyledText>
     <StyledText>
       The ethdash Chrome extension is a companion to the{" "}

@@ -22,7 +22,6 @@ export const Navigation = () => {
         <TabPanels>
           {Object.keys(navigationTabs).map((title) => {
             const { description, link, Content, index } = navigationTabs[title];
-            console.log(navigationTabs);
             return (
               <TabContainer
                 key={index}

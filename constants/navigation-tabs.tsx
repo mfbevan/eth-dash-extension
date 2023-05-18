@@ -1,10 +1,17 @@
 import { ReactNode } from "react";
-import { FcBookmark, FcComboChart, FcLock, FcQuestions } from "react-icons/fc";
+import {
+  FcBinoculars,
+  FcBookmark,
+  FcComboChart,
+  FcLock,
+  FcQuestions,
+} from "react-icons/fc";
 import {
   NetworkStats,
   NetworkStaked,
   Bookmarks,
   Information,
+  Favourites,
 } from "../components/content";
 
 export interface INavigationTab {
@@ -37,26 +44,17 @@ export const navigationTabs: Record<string, INavigationTab> = {
     description: "Powered by ethdash.xyz",
     link: "https://ethdash.xyz/",
   },
-  Information: {
+  Favourites: {
     index: 3,
+    icon: <FcBinoculars />,
+    Content: Favourites,
+    description: "Track your favourite Ethereum wallets",
+  },
+  Information: {
+    index: 4,
     icon: <FcQuestions />,
     Content: Information,
     description: "Made by mfbevan.eth",
     link: "https://twitter.com/mfbevan",
   },
-  // "Developer Tools": {
-  //   index: 3,
-  //   icon: "🚧",
-  //   Content: DarkModeButton,
-  // },
-  // Favorites: {
-  //   index: 4,
-  //   icon: "🌟",
-  //   Content: Favourites,
-  // },
-  // Settings: {
-  //   index: 5,
-  //   icon: "⚙️",
-  //   Content: DarkModeButton,
-  // },
 };

@@ -16,7 +16,7 @@ export interface NetworkStatsResponse {
 }
 
 export default apiHandler()
-  .use(cache())
+  .use(cache(10))
   .get(
     async (req: NextApiRequest, res: NextApiResponse<NetworkStatsResponse>) => {
       const { totalSupply, totalSupplyWei } =

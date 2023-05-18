@@ -52,7 +52,7 @@ export const dashboards: IDashboard[] = [
   {
     name: "AlphaDay",
     description:
-      "Alphaday is the ultimate crypto dashboard for staying up to date with all things crypto and interacting with your favorite DApps",
+      "Alphaday is the ultimate crypto dashboard for staying up to date with all things crypto and interacting with your favourite DApps",
     url: "https://app.alphaday.com/",
     image: "alpha-day.jpg",
     tags: [IDashboardTag.General],
