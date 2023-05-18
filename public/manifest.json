@@ -6,6 +6,8 @@
     "default_title": "Eth Dash Extension",
     "default_popup": "index.html"
   },
+  "description": "The ethdash.xyz extension for your daily Ethereum essentials.",
+  "author": "mfbevan@proton.me",
   "icons": {
     "16": "./favicon.ico",
     "48": "./favicon.ico",
