@@ -6,15 +6,13 @@ import {
   Tooltip,
 } from "@chakra-ui/react";
 import { DarkModeButton } from "../buttons";
-import { navigationTabs, useNavigationStore } from "../../stores";
+import { useNavigationStore } from "../../stores";
+import { navigationTabs } from "../../constants";
 
 export const NavigationButtons = () => {
   const { page, setPage } = useNavigationStore();
 
-  const selectedBorder = useColorModeValue(
-    "var(--chakra-colors-gray-200)",
-    "var(--chakra-colors-gray-600)"
-  );
+  const selectedBg = useColorModeValue("gray.200", "gray.800");
 
   return (
     <Flex
@@ -36,8 +34,7 @@ export const NavigationButtons = () => {
               _hover={{
                 boxShadow: "base",
               }}
-              bg="none"
-              borderRight={selected ? `4px solid ${selectedBorder}` : ""}
+              bg={selected ? selectedBg : "none"}
               transition="all 0.1s ease"
               boxShadow={selected ? "base" : "none"}
             >

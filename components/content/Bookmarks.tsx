@@ -5,7 +5,6 @@ export const Bookmarks = () => {
   return (
     <Flex flexDirection="column" gap="20px">
       <Dashboards />
-      {/* <FixedLoading isLoading={isFetching} /> */}
     </Flex>
   );
 };

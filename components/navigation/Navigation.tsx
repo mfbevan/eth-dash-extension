@@ -1,7 +1,8 @@
 import { Tabs, TabPanels, Flex } from "@chakra-ui/react";
 import { NavigationButtons } from "./NavigationButtons";
 import { TabContainer } from "./TabContainer";
-import { navigationTabs, useNavigationStore } from "../../stores";
+import { useNavigationStore } from "../../stores";
+import { navigationTabs } from "../../constants";
 
 export const Navigation = () => {
   const { page, setPage } = useNavigationStore();
@@ -21,6 +22,7 @@ export const Navigation = () => {
         <TabPanels>
           {Object.keys(navigationTabs).map((title) => {
             const { description, link, Content, index } = navigationTabs[title];
+            console.log(navigationTabs);
             return (
               <TabContainer
                 key={index}
@@ -28,7 +30,7 @@ export const Navigation = () => {
                 description={description}
                 link={link}
               >
-                <Content />
+                {Content && <Content />}
               </TabContainer>
             );
           })}

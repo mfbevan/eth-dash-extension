@@ -1,4 +1,4 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import { StatItem } from "../stats";
 import { useGetNetworkStaked } from "../../query";
 import { ErrorState } from "../error";
@@ -30,7 +30,7 @@ export const NetworkStaked = () => {
           color="red.500"
         />
         <StatItem
-          label="Total Validators"
+          label="Total Validators *"
           value={fetchedData?.validators}
           isLoading={isLoading}
         />
@@ -38,16 +38,19 @@ export const NetworkStaked = () => {
 
       <Flex gap="20px">
         <StatItem
-          label="Epoch"
+          label="Epoch *"
           value={fetchedData?.epoch}
           isLoading={isLoading}
         />
         <StatItem
-          label="Staked Ether"
+          label="Staked Ether *"
           value={fetchedData?.totalStaked}
           isLoading={isLoading}
         />
       </Flex>
+      <Text variant="tab-description" mt="-10px">
+        * as of last finalized epoch
+      </Text>
     </Flex>
   );
 };
