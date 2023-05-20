@@ -1,8 +1,18 @@
 # [ethdash.xyz](https://www.ethdash.xyz/)
 
-All of your favourite Ethereum Dashboards in one place. Thanks to [Superphiz](https://github.com/superphiz/dashboards) for the great idea
+![ethdash.xyz](/public/favicon.png)
 
-Deployed through Vercel at [https://www.ethdash.xyz/](https://www.ethdash.xyz/)
+Available to [download here](https://chrome.google.com/webstore/detail/eth-dash/fgfcejkmlhdmloeipanhiefnllpgnjfa)
+
+Seamlessly access all your favourite Ethereum dashboards in one convenient
+location. Monitor the latest network stats, keep an eye on Ethereum
+staking, and even monitor your favourite wallets, with plenty more
+features coming soon!
+
+The ethdash Chrome extension is a companion to the
+ethdash.xyz site created in 2022. We put all of your favourite Ethereum Dashboards in one place, and now we&apos;re taking it one step further by having them one-click away as a browser extension. Thanks again to Superphiz for getting the idea started! 
+
+Check out the site at [ethdash.xyz](https://www.ethdash.xyz/)
 
 ## Next.js 
 
